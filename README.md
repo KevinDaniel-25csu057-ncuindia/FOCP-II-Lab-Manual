@@ -1,2 +1,2 @@
 # FOCP-II-Lab-Manual
-creating the lab manual in cpp
+creating the lab manual in c++
