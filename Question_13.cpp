@@ -1,3 +1,4 @@
+//finding roots for a quadratic equation
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -29,4 +30,5 @@ int main() {
         cout << "Root 2 = " << realPart << " - " << imaginaryPart << "i\n";
     }
     return 0;
+
 }
