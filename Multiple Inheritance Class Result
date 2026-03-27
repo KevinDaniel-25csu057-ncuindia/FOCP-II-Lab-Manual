@@ -1,0 +1,51 @@
+/*Create two classes: Academic with marks, and Sports with score. 
+Derive a class Result that displays both academic marks and sports score. 
+Show how the derived class accesses members of both base classes.*/
+#include<iostream>
+using namespace std;
+class Academic
+{
+    protected:
+    int marks;
+    public:
+    void getMarks()
+    {
+        cout<<"\n Enter your mark : ";
+        cin>>marks;
+    }
+};
+
+class Sports
+{
+    protected:
+    int score;
+    public:
+    void getScore()
+    {
+        cout<<"\n Enter your score : ";
+        cin>>score;
+    }
+};
+
+class Result:public Academic, public Sports
+{
+    public:
+    void displayResult()
+    {
+        cout<<"\n Your Academic Marks are "<<marks;
+        cout<<"\n Your Sports Score is "<<score;
+    }
+};
+
+int main()
+{
+    Result r1,r2;
+    r1.getMarks();
+    r1.getScore();
+    r1.displayResult();
+    r2.getMarks();
+    r2.getScore();
+    r2.displayResult();   
+
+    return 0;
+}
