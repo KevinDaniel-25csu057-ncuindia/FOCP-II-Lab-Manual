@@ -1,0 +1,59 @@
+/*Create a class Account with account number and balance. 
+Add a function displayAccount(). 
+Derive a class SavingsAccount that includes interest rate and a function calculateInterest(). 
+Demonstrate usage of both classes.*/
+#include<iostream>
+#include<iomanip>
+using namespace std;
+class Account
+{
+    string accno;
+    protected:
+    float balance;
+    public:
+    Account()
+    {
+        accno="NA";
+        balance=0.0;
+    }
+    Account(string acno,float bal)
+    {
+        accno=acno;
+        balance=bal;
+    }
+    void displayAccount()
+    {
+        cout<<fixed<<setprecision(2);
+        cout<<"\n Account Number : "<<accno<<"\n Balance : "<<balance;
+    }
+};
+class SavingsAccount:public Account
+{
+    float interest;
+    public:
+    SavingsAccount()
+    {
+        interest=1.0;
+    }
+    SavingsAccount(string ac_no,float blnc,float intr):Account(ac_no,blnc)
+    {
+        interest=intr;
+    }
+    void calculateInterest()
+    {
+        cout<<"\n Your Account Details:";
+        displayAccount();
+        float interestAmount=balance*interest/100;
+        cout<<"\n Interest Rate : "<<interest<<"%";
+        cout<<"\n Interest Amount : "<<interestAmount;
+        cout<<"\n Total Balance after Interest : "<<balance + interestAmount;
+    }
+};
+
+int main()
+{
+    SavingsAccount s1,s2("ATP125784",7000000,10);
+    s1.calculateInterest();
+    s2.calculateInterest();
+    return 0;
+}
