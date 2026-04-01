@@ -1,0 +1,84 @@
+#include<iostream>
+using namespace std;
+class A
+{
+    int a;
+    public:
+    A()
+    {
+        cout<<"\n A constructor";
+        a=100;
+    }
+    ~A()
+    { 
+        cout<<"\n A destructor";
+    }
+    void display_A()
+    {
+        cout<<"\n Value of a = "<<a;
+    }
+};
+class B:virtual public A
+{
+    int b;
+    public:
+    B()
+    {
+        cout<<"\n B constructor";
+        b=200;
+    }
+    ~B()
+    { 
+        cout<<"\n B destructor";
+    }
+    void display_B()
+    {
+        cout<<"\n Value of b = "<<b;
+    }
+};
+class C:virtual public A
+{
+    int c;
+    public:
+    C()
+    {
+        cout<<"\n C constructor";
+        c=300;
+    }
+    ~C()
+    { 
+        cout<<"\n C destructor";
+    }
+    void display_C()
+    {
+        cout<<"\n Value of c = "<<c;
+    }
+};
+class D:public B, public C
+{
+    int d;
+    public:
+    D()
+    {
+        cout<<"\n D constructor";
+        d=400;
+    }
+    ~D()
+    { 
+        cout<<"\n D destructor";
+    }
+    void display_D()
+    {
+        display_A();
+        display_B();
+        display_C();
+        cout<<"\n Value of a = "<<d;
+    }
+};
+
+int main()
+{
+    D dobj;
+    dobj.display_D();
+    return 0;
+}
