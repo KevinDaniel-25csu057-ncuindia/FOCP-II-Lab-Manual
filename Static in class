@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+class university
+{
+    string rollno;
+    string name;
+    int marks;
+    public:
+    static string uni_name;
+    static string section;
+    static int room_no;
+    university(string rollno="25CSU000", string name="unknown", int marks=0)
+    {
+        this -> rollno=rollno;
+        this -> name=name;
+        this -> marks=marks;
+    }
+    void display_info()
+    {
+        cout<<"\n Name : "<<name<<"\n Roll No : "<<rollno<<"\n Marks : "<<marks;
+    }
+    static void display_uni()
+    {
+        cout<<"\n Uni Name : "<<uni_name<<"\n Section : "<<section<<"\n Room No : "<<room_no;
+    }
+};
+
+string university::uni_name = "NCU";
+string university::section = "Section B";
+int university::room_no = 32;
+
+int main()
+{
+    university s1,s2("25CSU057","ABC",50);
+    s1.display_info();
+    s2.display_uni();
+    university::display_uni();
+
+    return 0;
+}
